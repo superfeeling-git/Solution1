@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var ticket = "";
+
+            $.ajax({
+                url: "https://localhost:44305/api/Default",
+                type: "get",
+                dataType: "json",
+                data: {UserName:"admin",Password:"1234567"},
+                success: function (d) {
+                    ticket = d;
+                }
+            })
+
+            $("button").click(function () {
+                console.log(ticket);
+                jQuery.support.cors = true;
+               $.ajax({
+                   url: "https://localhost:44305/api/values",
+                   data: {},
+                   beforeSend: function (XHR) {
+                       //发送ajax请求之前向http的head里面加入验证信息
+                       XHR.setRequestHeader('Authorization', 'BasicAuth ' + ticket);
+                   },
+                   type: "get",
+                   dataType: "json",
+                   success: function (d) {
+                       console.log(d);
+                   }
+               })
+           })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button">调用</button>
+    </div>
+</body>
+</html>
