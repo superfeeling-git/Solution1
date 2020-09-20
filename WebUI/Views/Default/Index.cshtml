@@ -15,12 +15,14 @@
             var ticket = "";
 
             $.ajax({
-                url: "https://localhost:44305/api/Default",
-                type: "get",
+                url: "https://localhost:44361/token",
+                type: "post",
                 dataType: "json",
-                data: {UserName:"admin",Password:"1234567"},
+                data: { grant_type:"password", UserName:"admin",Password:"666666"},
                 success: function (d) {
-                    ticket = d;
+                    ticket = d.access_token;
+
+                    console.log(d);
                 }
             })
 
@@ -28,11 +30,10 @@
                 console.log(ticket);
                 jQuery.support.cors = true;
                $.ajax({
-                   url: "https://localhost:44305/api/values",
-                   data: {},
+                   url: "https://localhost:44361/api/customer",
                    beforeSend: function (XHR) {
                        //发送ajax请求之前向http的head里面加入验证信息
-                       XHR.setRequestHeader('Authorization', 'BasicAuth ' + ticket);
+                       XHR.setRequestHeader('Authorization', 'bearer ' + ticket);
                    },
                    type: "get",
                    dataType: "json",
