@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Security;
@@ -44,6 +45,10 @@ namespace WebAPI.App_Start
         //校验用户名密码（正式环境中应该是数据库校验）
         private bool ValidateTicket(string encryptTicket)
         {
+            var BaseStr = Convert.ToBase64String(new UTF8Encoding().GetBytes($"admin:1234567"));
+
+            var userpass = Encoding.UTF8.GetString(Convert.FromBase64String(BaseStr));
+
             //解密Ticket
             var strTicket = FormsAuthentication.Decrypt(encryptTicket).UserData;
 

@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{4681EC3A-937E-492F-AD78-A2546CFD78DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{9BFBE9A1-B65D-4829-9981-52ACF131CD11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{9BFBE9A1-B65D-4829-9981-52ACF131CD11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{CAD471A1-484C-42B2-B56C-6BA47571690B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapiTest", "webapiTest\webapiTest.csproj", "{9D270431-5B08-49FF-8147-03A387282A8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OauthAPI", "OauthAPI\OauthAPI.csproj", "{2AE4DB23-53DB-48E6-964B-19DB865B2D1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9D270431-5B08-49FF-8147-03A387282A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D270431-5B08-49FF-8147-03A387282A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D270431-5B08-49FF-8147-03A387282A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE4DB23-53DB-48E6-964B-19DB865B2D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE4DB23-53DB-48E6-964B-19DB865B2D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE4DB23-53DB-48E6-964B-19DB865B2D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE4DB23-53DB-48E6-964B-19DB865B2D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
